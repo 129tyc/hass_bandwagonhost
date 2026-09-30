@@ -17,6 +17,8 @@ The integration uses Home Assistant's built-in sensors and dashboards. It does n
 
 ### HACS custom repository
 
+[![Open HACS repository](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?category=integration&owner=129tyc&repository=hass_bandwagonhost)
+
 The GitHub repository must be public for HACS. In HACS, add [129tyc/hass_bandwagonhost](https://github.com/129tyc/hass_bandwagonhost) as a custom repository with category **Integration**, download **KiwiVM Traffic**, then restart Home Assistant.
 
 ### Manual install
