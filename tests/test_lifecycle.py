@@ -3,7 +3,7 @@
 from unittest.mock import AsyncMock, patch
 
 import pytest
-from homeassistant.config_entries import SOURCE_REAUTH
+from homeassistant.config_entries import ConfigEntryState, SOURCE_REAUTH
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 
 from custom_components.kiwivm_traffic.api import (
@@ -103,6 +103,9 @@ async def test_one_coordinator_updates_all_sensors_and_unloads(hass) -> None:
         assert entry.data[CONF_API_KEY] == "replacement-key"
         reauth_check.assert_awaited_once()
 
+        coordinator = entry.runtime_data.coordinator
         assert await hass.config_entries.async_unload(entry.entry_id)
         await hass.async_block_till_done()
-        assert all(hass.states.get(entity.entity_id) is None for entity in entities)
+        assert entry.state is ConfigEntryState.NOT_LOADED
+        assert coordinator._listeners == {}
+        assert coordinator._unsub_refresh is None

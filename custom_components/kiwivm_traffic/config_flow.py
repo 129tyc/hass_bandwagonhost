@@ -7,6 +7,7 @@ from typing import Any
 
 import voluptuous as vol
 from homeassistant import config_entries
+from homeassistant.config_entries import OptionsFlowWithReload
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers import aiohttp_client, selector
 
@@ -174,7 +175,7 @@ class KiwiVMConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         return KiwiVMOptionsFlow()
 
 
-class KiwiVMOptionsFlow(config_entries.OptionsFlow):
+class KiwiVMOptionsFlow(OptionsFlowWithReload):
     """Manage one VPS polling interval."""
 
     async def async_step_init(
