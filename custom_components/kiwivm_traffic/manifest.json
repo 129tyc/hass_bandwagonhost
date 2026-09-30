@@ -1,0 +1,14 @@
+{
+  "codeowners": ["@129tyc"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/129tyc/hass_bandwagonhost",
+  "domain": "kiwivm_traffic",
+  "homeassistant": "2026.3.0",
+  "integration_type": "device",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/129tyc/hass_bandwagonhost/issues",
+  "name": "KiwiVM Traffic",
+  "requirements": [],
+  "version": "0.1.0"
+}

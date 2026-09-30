@@ -1,0 +1,74 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "添加 KiwiVM VPS",
+        "description": "输入 VPS 的 KiwiVM 面板中显示的 VEID 和 API Key。",
+        "data": {
+          "veid": "VEID",
+          "api_key": "API Key",
+          "name": "显示名称"
+        }
+      },
+      "reconfigure": {
+        "title": "更新 KiwiVM 凭据",
+        "description": "输入此 VPS 的新 API Key。",
+        "data": {
+          "api_key": "API Key"
+        }
+      },
+      "reauth_confirm": {
+        "title": "重新输入 KiwiVM 凭据",
+        "description": "KiwiVM 拒绝了已保存的 API Key。请输入有效密钥以恢复更新。",
+        "data": {
+          "api_key": "API Key"
+        }
+      }
+    },
+    "error": {
+      "invalid_veid": "VEID 只能包含数字。",
+      "invalid_auth": "KiwiVM 拒绝了此 VEID 和 API Key。",
+      "cannot_connect": "无法连接 KiwiVM API。",
+      "invalid_response": "KiwiVM 返回了无效响应或 API 错误。",
+      "rate_limited": "KiwiVM 限制了请求频率，请稍后重试。"
+    },
+    "abort": {
+      "already_configured": "此 VEID 已添加。",
+      "reauth_successful": "KiwiVM 凭据已更新。",
+      "reconfigure_successful": "KiwiVM 凭据已更新。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "轮询间隔",
+        "description": "设置此 VPS 的查询间隔，范围为 5 至 60 分钟。",
+        "data": {
+          "scan_interval": "更新间隔（分钟）"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "quota": {
+        "name": "本周期流量额度"
+      },
+      "used": {
+        "name": "本周期已用流量"
+      },
+      "remaining": {
+        "name": "本周期剩余流量"
+      },
+      "usage_percent": {
+        "name": "流量使用率"
+      },
+      "next_reset": {
+        "name": "下次流量重置"
+      },
+      "updated_at": {
+        "name": "最近成功更新"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.DS_Store
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local requirements and test credentials; never publish these files.
+/REQUIREMENTS.md
+/tmp_secrets.txt

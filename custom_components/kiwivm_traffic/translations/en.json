@@ -1,0 +1,74 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add a KiwiVM VPS",
+        "description": "Enter the VEID and API key shown in the VPS KiwiVM panel.",
+        "data": {
+          "veid": "VEID",
+          "api_key": "API key",
+          "name": "Display name"
+        }
+      },
+      "reconfigure": {
+        "title": "Update KiwiVM credentials",
+        "description": "Enter the replacement API key for this VPS.",
+        "data": {
+          "api_key": "API key"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-enter KiwiVM credentials",
+        "description": "KiwiVM rejected the saved API key. Enter a valid key to resume updates.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "invalid_veid": "VEID must contain only digits.",
+      "invalid_auth": "KiwiVM rejected this VEID and API key.",
+      "cannot_connect": "Unable to reach the KiwiVM API.",
+      "invalid_response": "KiwiVM returned an invalid response or API error.",
+      "rate_limited": "KiwiVM rate-limited the request. Try again later."
+    },
+    "abort": {
+      "already_configured": "This VEID is already configured.",
+      "reauth_successful": "KiwiVM credentials were updated.",
+      "reconfigure_successful": "KiwiVM credentials were updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling interval",
+        "description": "Choose how often this VPS is queried. The minimum is 5 minutes.",
+        "data": {
+          "scan_interval": "Minutes between updates"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "quota": {
+        "name": "Current-cycle traffic quota"
+      },
+      "used": {
+        "name": "Current-cycle traffic used"
+      },
+      "remaining": {
+        "name": "Current-cycle traffic remaining"
+      },
+      "usage_percent": {
+        "name": "Traffic usage"
+      },
+      "next_reset": {
+        "name": "Next traffic reset"
+      },
+      "updated_at": {
+        "name": "Last successful update"
+      }
+    }
+  }
+}
